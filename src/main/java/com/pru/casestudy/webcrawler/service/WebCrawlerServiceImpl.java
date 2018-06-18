@@ -33,7 +33,6 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
 		for (Element link : links) {
 			
 		if(! link.attr("abs:href").startsWith(url)) {
-				System.out.println("~~~~~~~~~~~~~~~~"+  link.attr("abs:href"));
 				print(" * a: <%s>  (%s)", link.attr("abs:href"), trim(link.text(), 35));
 				ExternalLink page = new ExternalLink(trim(link.text(), 35), link.attr("abs:href"));
 				extLinks.add(page);
